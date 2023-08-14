@@ -148,7 +148,7 @@ async fn handler(
         Ok(files) => {
             for f in files.items {
                 let filename = &f.filename;
-                if filename.ends_with(".md") || filename.ends_with(".js") || filename.ends_with(".css") || filename.ends_with(".html") || filename.ends_with(".htm") {
+                if filename.ends_with(".md") || filename.ends_with(".html") || filename.ends_with(".htm") {
                     continue;
                 }
 
