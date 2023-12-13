@@ -187,7 +187,7 @@ async fn handler(
                     model: MODEL,
                     restart: true,
                     system_prompt: Some(system),
-                    ..chatOptions::default()
+                    ..ChatOptions::default()
                 };
                 let question = "Review the following source code and look for secuirty issues. The code might be truncated. So, do NOT comment on the completeness of the source code.\n\n".to_string() + t_file_as_text;
                 match openai.chat_completion(&chat_id, &question, &co).await {
@@ -206,7 +206,7 @@ async fn handler(
                     model: MODEL,
                     restart: false,
                     system_prompt: Some(system),
-                    ..chatOptions::default()
+                    ..ChatOptions::default()
                 };
                 let patch_as_text = f.patch.unwrap_or("".to_string());
                 let t_patch_as_text = truncate(&patch_as_text, CHAR_SOFT_LIMIT);
